@@ -350,7 +350,7 @@
 </main>
 
 <script>
-  const API = "http://localhost:8000";
+  const API = window.location.origin;
   let ws, sessionId = null;
 
   // ── Init ────────────────────────────────────────────────────────
@@ -551,6 +551,10 @@
         body: JSON.stringify(body)
       });
       const d = await r.json();
+      if (!r.ok) {
+        updateMsg(lid, `⚠️ ${d.detail || "Error from AI backend"}`);
+        return;
+      }
       sessionId = d.session_id;
       updateMsg(lid, d.answer);
     } catch {
