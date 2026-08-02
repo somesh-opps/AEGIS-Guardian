@@ -25,6 +25,25 @@ When an emergency occurs, every second counts. AEGIS connects smart sensor nodes
 
 > **Our Mission:** To reduce response times from minutes to seconds by utilizing AI to filter noise, detect genuine threats, and coordinate rapid response protocols.
 
+### 🎯 What Problems Does AEGIS Solve?
+Traditional security and monitoring systems often suffer from:
+- **Siloed Information:** Data from fire alarms, CCTV, and motion sensors are rarely integrated.
+- **High False Alarm Rates:** Non-intelligent sensors cannot distinguish between a minor anomaly and a critical threat.
+- **Delayed Response:** First responders lack real-time, context-rich data about the incident before arriving on the scene.
+
+**AEGIS** solves these by acting as a central nervous system. It ingests data from various modalities, uses AI to cross-reference and validate threats (e.g., correlating a temperature spike with visual smoke detection), and instantly pushes actionable intelligence to operators.
+
+### ⚙️ How It Works
+1. **Sensory Ingestion:** Edge hardware nodes (ESP32) gather environmental data (Temperature, Gas, Flame, Motion, Distance), while computer vision modules monitor visual feeds using YOLOv8.
+2. **AI Reasoning:** The data streams are sent to the FastAPI backend where advanced AI models (Gemini/Qwen) analyze the context. The AI evaluates the severity, filters out noise, and generates a structured incident report.
+3. **Instant Dissemination:** Validated threats are broadcasted via sub-second WebSockets to the Mission Control Web Dashboard (Next.js) for central command, and the AegisGuardian Mobile App (Flutter) for boots-on-the-ground responders.
+
+### 🏢 Target Environments
+- **University & College Campuses:** Ensuring student safety across large, distributed areas.
+- **Industrial Facilities & Warehouses:** Monitoring hazardous conditions and enforcing safety perimeters.
+- **Corporate Campuses & Smart Buildings:** Providing integrated security and emergency management.
+- **Event Venues:** Real-time crowd monitoring and rapid incident response.
+
 ---
 
 ## ✨ Key Features
