@@ -1,0 +1,4 @@
+ultralytics==8.2.48
+opencv-python==4.10.0.84
+httpx==0.27.0
+numpy==1.26.4
